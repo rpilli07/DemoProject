@@ -11,4 +11,4 @@ Then User successful checkout and confirmation
 
 Examples:
 	|product|
-	|Tiny Thingamabob 5|
+	|Clockwork Doodad 3|
