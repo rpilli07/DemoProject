@@ -11,7 +11,7 @@ import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.*;
 import utils.WaitHelper;
-import org.junit.Assert;
+import static org.junit.jupiter.api.Assertions.*;
 import org.openqa.selenium.interactions.Actions;
 import org.junit.jupiter.api.Assertions; 
 
@@ -36,7 +36,7 @@ public class T_Shoppingcart_Steps extends BaseClass {
 		driver.manage().deleteAllCookies();
 		driver.navigate().refresh();		
 //		Title validation
-		Assert.assertEquals("Title mismatch", "Test Pages", driver.getTitle());
+		Assertions.assertEquals("Test Pages", driver.getTitle(), "The page title does not match!");
 			
 	}
 	
@@ -158,7 +158,7 @@ public class T_Shoppingcart_Steps extends BaseClass {
 			  
 		By Pname = By.xpath("//*[@id='cartContainer']/div[1]/div[1]");
 		WebElement pelement = waitHelper.waitForElementClickable(Pname, 10);
-		Assert.assertEquals(pelement.getText(), title);		
+		Assertions.assertEquals(pelement.getText(), title);		
 		By Totalprice = By.xpath("//*[@id='cartContainer']/div[1]/div[5]");
 		WebElement Telement = waitHelper.waitForElementClickable(Totalprice, 10);
 		
@@ -166,7 +166,8 @@ public class T_Shoppingcart_Steps extends BaseClass {
 		
 		String priceValue = Telement.getText().substring(startIndex); 
    
-	    Assert.assertEquals(priceValue,price);
+	   Assertions.assertEquals(priceValue, price);
+	 
 	    try {
 
 		By TChkout = By.xpath("//*[@id=\'checkoutBtn\']");

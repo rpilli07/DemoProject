@@ -1,1 +1,11 @@
+# Ignore Maven build output (reports, logs, and compiled classes)
 /target/
+
+# Ignore Eclipse metadata
+.settings/
+.project
+.classpath
+bin/
+
+# Ignore Mac system files
+.DS_Store
